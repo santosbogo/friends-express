@@ -2,7 +2,9 @@
 
 ## Required Dependencies
 node, npm and docker
+
    nvm: https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/
+   
    docker: https://docs.docker.com/get-docker/ (Install docker desktop)
 
 ## How to run the server
