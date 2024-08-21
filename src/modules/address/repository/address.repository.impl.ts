@@ -7,10 +7,19 @@ export class AddressRepositoryImpl implements AddressRepository{
 
     async create(data: CreateAddressDTO): Promise<AddressDTO> {
         const address = await this.db.address.create({
-            data
+            data: {
+                street: data.street,
+                city: data.city,
+                state: data.state,
+                zip: data.zip,
+                friend: {
+                    connect: { id: data.friendId } // Asegúrate de que friendId se esté pasando correctamente
+                }
+            }
         });
         return new AddressDTO(address);
     }
+
 
     async delete(id: string): Promise<void> {
         await this.db.address.delete({

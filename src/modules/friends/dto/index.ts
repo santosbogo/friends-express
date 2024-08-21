@@ -1,6 +1,7 @@
 import {IsArray, IsEmail, IsNotEmpty, IsOptional, IsString, ValidateNested} from 'class-validator'
 import {Type} from "class-transformer";
 import {CreateAddressDTO} from "@modules/address/dto";
+import 'reflect-metadata';
 
 export class CreateFriendDTO {
     @IsString()
