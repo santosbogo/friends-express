@@ -1,6 +1,6 @@
 import {IsArray, IsEmail, IsNotEmpty, IsOptional, IsString, ValidateNested} from 'class-validator'
 import {Type} from "class-transformer";
-import {CreateAddressDTO} from "@modules/address/dto";
+import {AddressDTO, CreateAddressDTO} from "@modules/address/dto";
 import 'reflect-metadata';
 
 export class CreateFriendDTO {
@@ -28,10 +28,12 @@ export class FriendDTO {
         this.id = friend.id
         this.name = friend.name
         this.email = friend.email
+        this.addresses = friend.addresses || []
 
     }
 
     id: string
     name: string
     email: string
+    addresses: AddressDTO[]
 }
