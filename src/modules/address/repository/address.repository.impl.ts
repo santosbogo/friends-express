@@ -12,10 +12,13 @@ export class AddressRepositoryImpl implements AddressRepository{
                 city: data.city,
                 state: data.state,
                 zip: data.zip,
+                country: data.country,
                 friend: {
-                    connect: { id: data.friendId } // Asegúrate de que friendId se esté pasando correctamente
-                }
-            }
+                    connect: {
+                        id: data.friendId,
+                    },
+                },
+            },
         });
         return new AddressDTO(address);
     }
